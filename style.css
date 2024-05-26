@@ -3,9 +3,16 @@ body {
 }
 
 #map {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
 }
+
+@media screen only (max-width: 480px) {
+  #map{ 
+  height: 80vh;
+}
+}
+
 
 header h1 {
     padding: 0;
