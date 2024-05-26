@@ -10,7 +10,7 @@ body {
 
 @media only screen and (max-width: 480px) {
   #map {
-    height: 70vh;
+    height: 80vh;
   }
 }
 
