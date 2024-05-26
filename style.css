@@ -9,7 +9,7 @@ body {
 
 @media screen only (max-width: 480px) {
   #map{ 
-  height: 80vh;
+  height: 50vh;
 }
 }
 
