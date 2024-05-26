@@ -53,6 +53,14 @@ let trafficLayer = L.tileLayer('https://tile-b.openstreetmap.fr/hot/{z}/{x}/{y}.
 // Menampilkan Gambaran Maps ketika di Render pertama kali
 let map = L.map('map', {layers: [satelliteLayerV9, markersLayers]}).setView([-5.4489459, 115.3996154], 6);
 
+// Meletakan Marker
+var marker = L.marker([-8.669952220767247, 115.2184037705552],
+    {alt: 'Tujuan'}).addTo(map)
+    .bindPopup('Denpasar, Tempat yg ingin dituju!');
+    var marker = L.marker([-8.814000188758225, 115.16662254701092],
+    {alt: 'Patung Garuda Wisnu Kencana'}).addTo(map)
+    .bindPopup('Patung Garuda Wisnu Kencana, Tempat yg ingin dituju!');
+
 let baseLayers = {
     "SatelliteV9": satelliteLayerV9,
     "Satelite biasa": satellitelayerbiasa,
