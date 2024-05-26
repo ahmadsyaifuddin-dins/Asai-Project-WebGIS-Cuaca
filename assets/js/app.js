@@ -10,12 +10,14 @@ let apiUrls = {
 
 let markersLayers = new L.LayerGroup();
 
+// Titik Koordinat
 let coords = {
     'kalimantan-selatan': [-2.7727865, 115.4927252],
     'bali': [-8.4176227, 115.1482732]
 };
 
-let satelliteLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmF1eml5dXNhcmFobWFuIiwiYSI6ImNsZmpiOXBqYTJnbzUzcnBnNnJzMjB0ZHMifQ.AldZlBJVQaCALzRw-vhWiQ', {
+// Layer Map SateliteV9
+let satelliteLayerV9 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmF1eml5dXNhcmFobWFuIiwiYSI6ImNsZmpiOXBqYTJnbzUzcnBnNnJzMjB0ZHMifQ.AldZlBJVQaCALzRw-vhWiQ', {
     maxZoom: 18,
     id: 'mapbox/satellite-v9',
     tileSize: 512,
@@ -23,6 +25,11 @@ let satelliteLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z
     attribution: mbAttr
 });
 
+let satellitelayerbiasa = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+    maxZoom: 25
+});
+
+// Layer Map OpenStreetMapV9
 let streetv9Layer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmF1eml5dXNhcmFobWFuIiwiYSI6ImNsZmpiOXBqYTJnbzUzcnBnNnJzMjB0ZHMifQ.AldZlBJVQaCALzRw-vhWiQ', {
     maxZoom: 19,
     id: 'mapbox/dark-v9',
@@ -31,17 +38,19 @@ let streetv9Layer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}
     attribution: mbAttr
 });
 
+// Layer Map Street
 let streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: mbAttr
 });
 
 // Menampilkan Gambaran Maps ketika di Render pertama kali
-let map = L.map('map', {layers: [satelliteLayer, markersLayers]}).setView([-5.4489459, 115.3996154], 6);
+let map = L.map('map', {layers: [satelliteLayerV9, markersLayers]}).setView([-5.4489459, 115.3996154], 6);
 
 let baseLayers = {
-    "SatelliteV9": satelliteLayer,
-    "StreetV9": streetv9Layer,
+    "SatelliteV9": satelliteLayerV9,
+    "Satelite biasa": satellitelayerbiasa,
+    "Dark StreetV9": streetv9Layer,
     "OpenStreetMap": streetLayer
 };
 
