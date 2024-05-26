@@ -7,6 +7,14 @@ body {
     width: 100%;
 }
 
+
+@media only screen and (max-width: 480px) {
+  #map {
+    height: 72vh;
+  }
+}
+
+
 header h1 {
     padding: 0;
     margin: 0 0 5px;
