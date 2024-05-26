@@ -44,6 +44,12 @@ let streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pn
     attribution: mbAttr
 });
 
+// Layer Lalu Lintas
+let trafficLayer = L.tileLayer('https://tile-b.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: mbAttr
+});
+
 // Menampilkan Gambaran Maps ketika di Render pertama kali
 let map = L.map('map', {layers: [satelliteLayerV9, markersLayers]}).setView([-5.4489459, 115.3996154], 6);
 
@@ -60,6 +66,7 @@ L.control.layers(baseLayers).addTo(map);
 L.easyPrint({
     title: 'Print Map',
     position: 'topleft',
+    sizeModes: ['A4Portrait', 'A4Landscape'],
     elementsToHide: 'p, h2'
 }).addTo(map);
 
@@ -203,11 +210,6 @@ function parseDate(date) {
     return moment(setTanggal).add(utc, 'h').format('DD MMMM YYYY HH:mm') + ' WITA';
 }
 
-// function popUp(feature, layer) {
-//     if (feature.properties && feature.properties.name) {
-//         layer.bindPopup(feature.properties.name);
-//     }
-// }
 
 function popUp(f, l) {
     var out = [];
@@ -260,3 +262,4 @@ function addGeoJsonLayers(wilayah) {
         }).addTo(map);
     });
 }
+
