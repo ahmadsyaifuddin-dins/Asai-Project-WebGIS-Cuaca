@@ -7,18 +7,6 @@ body {
     width: 100%;
 }
 
-header {
-    color: white;
-    position: absolute;
-    top: 10px;
-    left: 60px;
-    z-index: 1000;
-    background: transparent;
-    backdrop-filter: blur(2px);
-    padding: 10px 20px;
-    width: calc(100% - 180px);
-}
-
 header h1 {
     padding: 0;
     margin: 0 0 5px;
@@ -31,43 +19,8 @@ header p {
     font-size: 14px;
 }
 
-header .select {
-    position: absolute;
-    right: 20px;
-    top: 1rem;
-}
-
-header .select>select {
+.select>select {
     font-size: 1rem;
     padding: .5rem;
     border: 1px solid #ddd !important;
-}
-
-@media only screen and (max-width: 480px) {
-    /* header {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        left: 10px;
-        top: auto;
-        bottom: 10px;
-        width: calc(80%);
-    }
-
-    header .title {
-        order: 2;
-        margin-top: 10px;
-    } */
-
-    header .select {
-        position: relative;
-        order: 1;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    header .select>select {
-        width: 48%;
-    }
 }

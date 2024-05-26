@@ -21,28 +21,35 @@
 </head>
 <body>
     <header>
-        <div class="title">
-            <h2>Project WebGIS with Data BMKG</h2>
-            <p>Date : <span class="tanggal"></span></p>
+        <div align="center">
+            <h2>Project WebGIS Cuaca ⛅</h2>
         </div>
-        <div class="select">
-            <select name="select-tanggal"></select>
-            <select name="select-wilayah" class="wilayah">
-                <option value="kalimantan-selatan">Kalimantan Selatan</option>
-                <option value="bali">Bali</option>
-            </select>
+        <div align="right">
+            <b>Tanggal Sekarang : <span class="tanggal"></span></b>
         </div>
+        <br>
     </header>
+
     <div id="map"></div>
+    <div class="select">
+        <select name="select-tanggal"></select>
+        <select name="select-wilayah" class="wilayah">
+            <option value="kalimantan-selatan">Kalimantan Selatan</option>
+            <option value="bali">Bali</option>
+        </select>
+    </div>
+
+        <footer>
+            <center> <br> 
+                <b> Copyright &copy; <span id="year"></span> WebGIS GeoJSON Kalsel & Bali (API Data from BMKG) <br> Made with 🧠+⚡ by Ahmad Syaifuddin  </b>
+            </center>
+        </footer>
     
     
-    <footer>
-        <center> <br> 
-            <b> Copyright &copy; <span id="year"></span> WebGIS GeoJSON Kalsel & Bali (API Data from BMKG) <br> Made with 🧠⚡ by Ahmad Syaifuddin  </b>
-        </center>
-    </footer>
+    
 
     <script>
+
     // Get year Dynamic Footer
     document.getElementById("year").innerHTML = new Date().getFullYear();
     </script>
