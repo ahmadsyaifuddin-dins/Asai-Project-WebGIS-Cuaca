@@ -47,3 +47,18 @@ header p {
     padding: .5rem;
     border: 1px solid #ddd !important;
 }
+
+.position-button {
+    font-size: 16px;
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.position-button:hover {
+    background-color: #0056b3;
+}

@@ -270,4 +270,3 @@ function addGeoJsonLayers(wilayah) {
         }).addTo(map);
     });
 }
-
