@@ -24,11 +24,8 @@
     <script src="assets/js/dayjs.js"></script>
     <script src="assets/js/timezone.js"></script>
     <script src="assets/js/utc.js"></script>
-
-    
 </head>
 <body>
-    
     <header>
         <div align="center">
             <h2>Project WebGIS Cuaca ⛅</h2>
@@ -69,8 +66,8 @@
         dayjs.extend(dayjs_plugin_timezone);
 
         function updateClocks() {
-            const witaTime = dayjs().tz('Asia/Ujung_Pandang').format( ' HH:mm:ss ' ) + ' WITA / ';
-            const utcTime = dayjs().utc().format( ' HH:mm:ss ' ) + ' UTC';
+            const witaTime = dayjs().tz('Asia/Ujung_Pandang').format('HH:mm:ss') + ' WITA';
+            const utcTime = dayjs().utc().format('HH:mm:ss') + ' UTC';
             
             document.getElementById('timeWITA').innerText = witaTime;
             document.getElementById('timeUTC').innerText = utcTime;
@@ -81,11 +78,11 @@
     </script>
 
     <!-- Default Statcounter code for WebGIS Cuaca
-https://asai-project-webgis-cuaca.vercel.app/ -->
-<script type="text/javascript">
-    var sc_project=13002300; 
-    var sc_invisible=1; 
-    var sc_security="9284a9ec"; 
+    https://asai-project-webgis-cuaca.vercel.app/ -->
+    <script type="text/javascript">
+        var sc_project=13002300; 
+        var sc_invisible=1; 
+        var sc_security="9284a9ec"; 
     </script>
     <script type="text/javascript"
     src="https://www.statcounter.com/counter/counter.js"

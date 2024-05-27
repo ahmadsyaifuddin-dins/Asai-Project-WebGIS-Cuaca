@@ -20,7 +20,10 @@
     text-shadow: 3px 3px 5px #000000;
 }
 
+/* Ini Utamanya */
 .FontDigit {
+    margin: 0 5px;
+    /* Add some space between the two clocks */
     font-family: 'FontSpesial';
     font-size: 30px;
     color: #00af00;
