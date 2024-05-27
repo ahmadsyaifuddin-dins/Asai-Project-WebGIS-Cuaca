@@ -9,7 +9,6 @@
     <meta name="robot" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta property="og:image" content="https://i.ibb.co.com/6PNwF7W/jembatan-barito-spot-favorit-di-banjarmasin-Pi-V0p-KGled.jpg">
-    <!-- <meta property="og:image:secure_url" content="assets/images/pic/jembatan-barito-spot-favorit-di-banjarmasin-PiV0pKGled.jpg"> -->
     <meta property="og:title" content="WebGIS Prakiraan Cuaca" />
     <meta property="og:description" content="Project WebGIS Prakiraan Cuaca by Asai" />
     <meta property="og:type" content="website" />
@@ -17,19 +16,51 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="author" content="Ahmad Syaifuddin">
-    <!-- <meta name="description" content="Project WebGIS Asai with Data BMKG - Prakiraan Cuaca."> -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="time.css">
     <link rel="shortcut icon" type="image/jpg" href="assets/images/pic/jembatan-barito-spot-favorit-di-banjarmasin-PiV0pKGled.jpg"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="assets/js/dayjs.js"></script>
+    <script src="assets/js/timezone.js"></script>
+    <script src="assets/js/uts.js"></script>
+
+    <script>
+        dayjs.extend(window.dayjs_plugin_utc)
+        dayjs.extend(window.dayjs_plugin_timezone)
+
+        async function fetchBMKGTime() {
+            try {
+                const response = await fetch('https://jam.bmkg.go.id/Jam.BMKG');
+                const text = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const bmkgTime = doc.querySelector('span.FontDigit').innerText; // Sesuaikan selektor dengan struktur HTML sebenarnya
+                document.querySelector('.bmkg-time').innerText = bmkgTime;
+            } catch (error) {
+                console.error('Error fetching BMKG time:', error);
+            }
+        }
+
+        function updateBMKGTime() {
+            document.getElementById('timecontainer').innerHTML = '<span class="hari-digit hidden-sm"></span> <span class="FontDigit">' + dayjs().tz('Asia/Ujung_Pandang').format('HH:mm:ss') + ' WITA / ' + dayjs.utc().format('HH:mm:ss') + ' UTC</span>';
+        }
+
+        setInterval(updateBMKGTime, 1000);
+        fetchBMKGTime();
+    </script>
 </head>
 <body>
+    
     <header>
         <div align="center">
             <h2>Project WebGIS Cuaca ⛅</h2>
         </div>
-        <div align="right">
-            <b>Current date : <span class="tanggal"></span></b>
+        <div class="timer"> 
+            <div id="timecontainer" class="topbar-time pull-right hidden-xs"></div>
+            <div class="tanggal-container">
+                <b>Current date : <span class="tanggal"></span></b>
+            </div>
         </div>
         <br>
     </header>
@@ -44,38 +75,16 @@
         </select>
     </div>
 
-        <footer>
-            <center> <br> 
-                <b> Copyright &copy; <span id="year"></span> WebGIS GeoJSON Kalsel & Bali (API Data from BMKG) <br> Made with 🧠+⚡ by Ahmad Syaifuddin  </b>
-            </center>
-        </footer>
-    
-    
-    
+    <footer>
+        <center><br>
+            <b>Copyright &copy; <span id="year"></span> WebGIS GeoJSON Kalsel & Bali (API Data from BMKG) <br> Made with 🧠+⚡ by Ahmad Syaifuddin</b>
+        </center>
+    </footer>
 
     <script>
-    // Get year Dynamic Footer
-    document.getElementById("year").innerHTML = new Date().getFullYear();
+        // Get year Dynamic Footer
+        document.getElementById("year").innerHTML = new Date().getFullYear();
     </script>
-
-    <!-- Default Statcounter code for WebGIS Cuaca
-    https://asai-project-webgis-cuaca.vercel.app/ -->
-<script type="text/javascript">
-    var sc_project=13002300; 
-    var sc_invisible=1; 
-    var sc_security="9284a9ec"; 
-</script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics"
-    href="https://statcounter.com/" target="_blank"><img
-    class="statcounter"
-    src="https://c.statcounter.com/13002300/0/9284a9ec/1/"
-    alt="Web Analytics"
-    referrerPolicy="no-referrer-when-downgrade"></a></div>
-    </noscript>
-    <!-- End of Statcounter Code -->
 
     <script src="assets/js/moment.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>

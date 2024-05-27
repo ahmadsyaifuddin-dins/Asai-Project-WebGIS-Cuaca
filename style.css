@@ -7,11 +7,26 @@ body {
     width: 100%;
 }
 
+.timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.topbar-time {
+    margin-right: auto;
+}
+
+.tanggal-container {
+    margin-left: auto;
+}
+
 
 @media only screen and (max-width: 480px) {
-  #map {
-    height: 72vh;
-  }
+    #map {
+        height: 72vh;
+    }
 }
 
 

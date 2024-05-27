@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'FontSpesial';
+    src: url('assets/digital-7-mono/digital-7.ttf');
+}
+
+@font-face {
+    font-family: 'FontSpesial';
+    src: url('assets/digital-7-mono/digital-7.ttf');
+}
+
+.FontStandar {
+    font-family: Arial;
+    font-size: 40pt;
+}
+
+.FontHari {
+    font-family: 'FontSpesial';
+    font-size: 45pt;
+    color: #33ccff;
+    text-shadow: 3px 3px 5px #000000;
+}
+
+.FontDigit {
+    font-family: 'FontSpesial';
+    font-size: 30px;
+    color: #00af00;
+}
+
+.FontHariS {
+    font-family: Arial;
+    font-size: 40pt;
+    color: #33ccff;
+    text-shadow: 3px 3px 5px #000000;
+}
+
+.FontDigitS {
+    font-family: Arial;
+    font-size: 80pt;
+    color: #00ff00;
+    text-shadow: 3px 3px 5px #000000;
+}
+
+.FontHariU {
+    font-family: 'FontSpesial';
+    font-size: 25pt;
+    color: #33ccff;
+    text-shadow: 3px 3px 5px #000000;
+}
+
+.FontDigitU {
+    font-family: 'FontSpesial';
+    font-size: 50pt;
+    color: #00ff00;
+    text-shadow: 3px 3px 5px #000000;
+}
+
+.FontHariSU {
+    font-family: Arial;
+    font-size: 20pt;
+    color: #33ccff;
+    text-shadow: 3px 3px 5px #000000;
+}
+
+.FontDigitSU {
+    font-family: Arial;
+    ;
+    font-size: 40pt;
+    color: #00ff00;
+    text-shadow: 3px 3px 5px #000000;
+}
