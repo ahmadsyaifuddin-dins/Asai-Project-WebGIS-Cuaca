@@ -26,6 +26,12 @@
     color: #00af00;
 }
 
+@media only screen and (max-width: 480px) {
+    .FontDigit {
+        font-size: 20px;
+    }
+}
+
 .FontHariS {
     font-family: Arial;
     font-size: 40pt;
