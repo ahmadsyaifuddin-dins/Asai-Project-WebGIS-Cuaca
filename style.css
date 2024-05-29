@@ -28,6 +28,11 @@ body {
     #map {
         height: 72vh;
     }
+
+    .tanggal-container {
+      font-size: 12px;
+    }
+
 }
 
 
