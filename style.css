@@ -48,6 +48,16 @@ header p {
     font-size: 14px;
 }
 
+select .wilayah,
+.select .satelite {
+    max-width: 100%;
+    /* Menentukan lebar maksimum elemen select */
+    width: 14%;
+    /* Menyesuaikan lebar elemen select dengan lebar container */
+    margin: 10px 0;
+    /* Menambahkan margin vertikal 10px pada elemen select */
+}
+
 .select>select {
     margin-top: 5px;
     font-size: 1rem;
@@ -67,10 +77,20 @@ header p {
     transition: background-color 0.3s ease;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
     .position-button {
         display: block !important;
         margin: 2px auto;
+    }
+
+    select .wilayah,
+    .select .satelite {
+        max-width: 100%;
+        /* Menentukan lebar maksimum elemen select */
+        width: 52%;
+        /* Menyesuaikan lebar elemen select dengan lebar container */
+        margin: 10px 0;
+        /* Menambahkan margin vertikal 10px pada elemen select */
     }
 }
 
