@@ -88,7 +88,7 @@
         window.onload = updateClocks;  // Ensure the function runs after the window has loaded
 
         // Redirect to the link when an option is selected
-        document.getElementById('wilayahSelect').addEventListener('change', function() {
+        document.getElementById('satelliteSelect').addEventListener('change', function() {
             const selectedValue = this.value;
             if (selectedValue.startsWith('http')) {
                 window.location.href = selectedValue;
