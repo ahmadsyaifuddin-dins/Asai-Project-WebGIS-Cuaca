@@ -45,13 +45,21 @@
     <br>
     <div class="select">
         <select name="select-tanggal"></select>
-        <select name="select-wilayah" class="wilayah">
+        <select name="select-wilayah" class="wilayah" id="wilayahSelect">
+            <!-- <option value="">-- Pilih Wilayah --</option> -->
             <option value="kalimantan-selatan">Kalimantan Selatan</option>
             <option value="bali">Bali</option>
         </select>
+        <select name="select-satellite" id="satelliteSelect">
+            <option value="">-- Pilih Citra Satelit --</option>
+            <option value="https://www.bmkg.go.id/satelit/satelit.bmkg?Sat=0&id=19">Satelit Himawari-9 Enhanced (Pembentukan Awan)</option>
+            <option value="https://www.bmkg.go.id/satelit/satelit.bmkg?Sat=3&id=19">Satelit Himawari-9 Rainfall Potential</option>
+            <option value="https://www.bmkg.go.id/satelit/satelit.bmkg?Sat=5&id=0">Satelit Himawari-9 Cloud Type</option>
+            <option value="https://www.bmkg.go.id/satelit/satelit.bmkg?Sat=2&id=0">Satelit Himawari-9 Water Vapor Enhanced (Kelembaban Udara)</option>
+            <option value="https://www.bmkg.go.id/satelit/satelit.bmkg?Sat=15&id=0">Satelit Himawari-9 Vektor Angin (Kecepatan Angin)</option>
+        </select>
         <button id="getPositionButton" class="position-button">My Location <i class="fa-solid fa-location-dot"></i> </button>
     </div>
-
 
     <footer>
         <center><br>
@@ -78,6 +86,14 @@
 
         setInterval(updateClocks, 1000);
         window.onload = updateClocks;  // Ensure the function runs after the window has loaded
+
+        // Redirect to the link when an option is selected
+        document.getElementById('wilayahSelect').addEventListener('change', function() {
+            const selectedValue = this.value;
+            if (selectedValue.startsWith('http')) {
+                window.location.href = selectedValue;
+            }
+        });
     </script>
 
     <!-- Default Statcounter code for WebGIS Cuaca
