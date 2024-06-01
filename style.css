@@ -49,6 +49,7 @@ header p {
 }
 
 .select>select {
+    margin-top: 5px;
     font-size: 1rem;
     padding: .5rem;
     border: 1px solid #ddd !important;
