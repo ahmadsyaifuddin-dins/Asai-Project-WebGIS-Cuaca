@@ -69,7 +69,7 @@ header p {
 @media only screen and (max-width: 400px) {
     .position-button {
         display: block !important;
-        margin: 10px auto;
+        margin: 2px auto;
     }
 }
 
