@@ -25,6 +25,16 @@ let satelliteLayerV9 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/
     attribution: mbAttr
 });
 
+// Layer Map Hybrid
+let hybridLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+    maxZoom: 25,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
+});
+
+
+// Layer Map Satelit Biasa
 let satellitelayerbiasa = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
     maxZoom: 25
 });
@@ -63,6 +73,7 @@ var marker = L.marker([-8.669952220767247, 115.2184037705552],
 
 let baseLayers = {
     "SatelliteV9": satelliteLayerV9,
+    "Hybrid": hybridLayer,
     "Satelite biasa": satellitelayerbiasa,
     "Dark StreetV9": streetv9Layer,
     "OpenStreetMap": streetLayer
