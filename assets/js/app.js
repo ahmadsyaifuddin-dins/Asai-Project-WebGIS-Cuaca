@@ -70,6 +70,7 @@ let baseLayers = {
 
 L.control.layers(baseLayers).addTo(map);
 
+
 // Add the easyPrint button
 L.easyPrint({
     title: 'Print Map',
@@ -257,7 +258,7 @@ function addGeoJsonLayers(wilayah) {
             { file: "63.08 Kabupaten Hulu Sungai Utara - Amuntai.geojson" },
             { file: "63.09 Kabupaten Tabalong - Tanjung.geojson" },
             { file: "63.10 Kabupaten Tanah Bumbu - Batulicin.geojson" },
-            { file: "63.11 Kabupaten Balangan - Paringin.geojson" },
+            { file: "63.11 Kabupaten Balangan - Paringin.geojson", style: { color: 'purple' } },
             { file: "63.71 Kota Banjarmasin.geojson", style: { color: 'red' } },
             { file: "63.72 Kota Banjarbaru.geojson", style: { color: 'orange' } },
         ];
