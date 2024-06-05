@@ -33,11 +33,15 @@ let hybridLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z
     'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
 });
 
+// Layer Map Topografi
+let topoLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmF1eml5dXNhcmFobWFuIiwiYSI6ImNsZmpiOXBqYTJnbzUzcnBnNnJzMjB0ZHMifQ.AldZlBJVQaCALzRw-vhWiQ', {
+    maxZoom: 18,
+    id: 'mapbox/outdoors-v11', // ID untuk layer topografi
+    tileSize: 512,
+    zoomOffset: -1,
+    attribution: mbAttr
+});
 
-// Layer Map Satelit Biasa
-// let satellitelayerbiasa = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-//     maxZoom: 25
-// });
 
 // Layer Map DarkV9
 let darkv9 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmF1eml5dXNhcmFobWFuIiwiYSI6ImNsZmpiOXBqYTJnbzUzcnBnNnJzMjB0ZHMifQ.AldZlBJVQaCALzRw-vhWiQ', {
@@ -74,7 +78,7 @@ var marker = L.marker([-8.669952220767247, 115.2184037705552],
 let baseLayers = {
     "SatelliteV9": satelliteLayerV9,
     "Hybrid": hybridLayer,
-    // "Satelite biasa": satellitelayerbiasa,
+    "Topografi": topoLayer,  // Tambahkan ini
     "Dark V9": darkv9,
     "StreetMap": streetLayer
 };
