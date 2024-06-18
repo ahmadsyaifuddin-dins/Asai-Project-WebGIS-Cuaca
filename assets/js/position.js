@@ -21,10 +21,10 @@ function showPosition(position) {
     // seperti menambahkan marker ke peta atau mengirimkan ke server.
     // Berikut ini contoh menambahkan marker ke peta:
     L.marker([latitude, longitude]).addTo(map)
-        .bindPopup('Posisi kamu disini nih (⁠≧⁠▽⁠≦⁠)').openPopup();
+        .bindPopup('Posisi kamu disini (⁠≧⁠▽⁠≦⁠)').openPopup();
 
     // Anda juga bisa memperbarui tampilan peta agar menampilkan posisi pengguna:
-    map.setView([latitude, longitude], 15);
+    map.setView([latitude, longitude], 8);
 }
 
 // Panggil fungsi getLocation() saat halaman dimuat.
