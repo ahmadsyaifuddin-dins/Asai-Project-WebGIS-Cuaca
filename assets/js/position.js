@@ -24,7 +24,7 @@ function showPosition(position) {
         .bindPopup('Posisi kamu disini (⁠≧⁠▽⁠≦⁠)').openPopup();
 
     // Anda juga bisa memperbarui tampilan peta agar menampilkan posisi pengguna:
-    map.setView([latitude, longitude], 8);
+    map.setView([latitude, longitude], 20);
 }
 
 // Panggil fungsi getLocation() saat halaman dimuat.
