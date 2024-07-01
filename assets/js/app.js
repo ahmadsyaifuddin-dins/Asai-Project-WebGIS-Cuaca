@@ -32,7 +32,7 @@ let hybridLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z
     '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
     'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
 });
-
+ 
 // Layer Map Topografi
 let topoLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmF1eml5dXNhcmFobWFuIiwiYSI6ImNsZmpiOXBqYTJnbzUzcnBnNnJzMjB0ZHMifQ.AldZlBJVQaCALzRw-vhWiQ', {
     maxZoom: 18,
@@ -274,7 +274,7 @@ function addGeoJsonLayers(wilayah) {
             { file: "63.09 Kabupaten Tabalong - Tanjung.geojson" },
             { file: "63.10 Kabupaten Tanah Bumbu - Batulicin.geojson" },
             { file: "63.11 Kabupaten Balangan - Paringin.geojson", style: { color: 'purple' } },
-            { file: "63.71 Kota Banjarmasin.geojson", style: { color: 'red' } },
+            { file: "63.71 Kota Banjarmasin.geojson", style: { color: 'green' } },
             { file: "63.72 Kota Banjarbaru.geojson", style: { color: 'orange' } },
         ];
     }
